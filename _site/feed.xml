@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-06T20:54:55-05:00</updated><id>http://localhost:4000/</id><title type="html">JBlog</title><subtitle>JBlog is a minimal, one column and blue jekyll theme for your blog.</subtitle><entry><title type="html">JBlog Jekyll Theme</title><link href="http://localhost:4000/JBlog-theme/" rel="alternate" type="text/html" title="JBlog Jekyll Theme" /><published>2016-03-21T00:00:00-05:00</published><updated>2016-03-21T00:00:00-05:00</updated><id>http://localhost:4000/JBlog-theme</id><content type="html" xml:base="http://localhost:4000/JBlog-theme/">![jekyll Image](http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/02/1424055625jekyll.png)
+{: .image-pull-right}
+
+&lt;center&gt;&lt;b&gt;JBlog&lt;/b&gt; is a simple jekyll theme.&lt;/center&gt;
+
+## About
+
+I have used this theme in my own php and ruby blogs.I got inspired by [taylantatli](https://github.com/taylantatli/)'s [moon](https://github.com/taylantatli/moon) and [ramme](https://github.com/taylantatli/ramme) themes to use this theme in Jekyll.
+
+I'm not a designer or something, so I'm sure there is a better way to make this theme. But it's working and looks acceptable for different screen sizes. If something looks extremely ugly and you can't resist to fix it, just send me a PR. I will be grateful.
+
+I see some people using this theme. I need to search on Github to find who use it. But I don't want to search like this. If you like this theme or using it, please give a **star** for motivation.
+
+## Installation
+* Fork the [Repo](https://github.com/alperenbozkurt/JBlog/fork)
+* Edit `_config.yml` file.
+* Remove sample posts from `_posts` folder and add yours.
+* Edit `index.md` file in `about` folder.
+* Change repo name to `YourUserName.github.io`    
+
+That's all.
+
+## Scaffolding    
+How JBlog is organized and what the various files are. All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder.    
+
+{% highlight text %}
+├── 404.html                                    # 404 page
+├── about                                       # About Page
+├── assets
+│   ├── css                                     # Compiled stylesheets
+│   ├── fonts                                   # webfonts
+│   ├── img                                     # Folder for images
+│   │   ├── favicon                             # Folder for favicons
+│   └── js                                      # Folder for scripts
+├── blog                                        # Post list for blog
+├── _config.yml                                 # Configuration file for jekyll
+├── _data
+│   └── navigation.yml                          # Navigation links
+├── _includes
+│   ├── favicon.html                            # Favicon links
+│   ├── footer-home.html                        # Footer for home page
+│   ├── footer.html                             # Footer for other pages
+│   ├── head-home.html                          # Head for home page
+│   ├── head.html                               # Head for other pages
+│   ├── nav-home.html                           # Top navigation for home page
+│   ├── nav.html                                # Top navigation for other pages
+│   ├── open-graph.html                         # Twitter Cards and Open Graph meta data
+│   ├── scripts.html                            # Site scripts
+│   ├── social-links.html                       # Social links to show in homepage
+│   └── toc.html                                # Table of contents to use in some posts
+├── index.html                                  # Homepage
+├── _layouts
+│   ├── home.html                               # Home layout
+│   ├── page.html                               # Page layout
+│   ├── post.html                               # Post layout
+│   ├── post-index.html                         # Post list layout
+│   └── project.html                            # Project list layout
+├── _posts                                      # MarkDown formatted posts
+├── _sass                                       # Sass stylesheets
+└── projects                                    # Projects list page
+{% endhighlight %}   
+
+---
+
+## Site Setup
+A quick checklist of the files you’ll want to edit to get up and running.    
+
+### Site Wide Configuration
+`_config.yml` is your friend. Open it up and personalize it. Most variables are self explanatory but here's an explanation of each if needed:
+
+#### title
+
+The title of your site... shocker!
+
+Example `title: My Awesome Site`
+
+#### url
+
+Used to generate absolute urls in `sitemap.xml`, `feed.xml`, and for generating canonical URLs in `&lt;head&gt;`. When developing locally either comment this out or use something like `http://localhost:4000` so all assets load properly. *Don't include a trailing `/`*.
+
+Examples:
+
+{% highlight yaml %}
+url: http://alperenbozkurt.net/JBlog
+url: http://localhost:4000
+url: //cooldude.github.io
+url:
+{% endhighlight %}
+
+#### Google Analytics and Webmaster Tools
+
+Google Analytics UA and Webmaster Tool verification tags can be entered in `_config.yml`. For more information on obtaining these meta tags check [Google Webmaster Tools](http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=35179) and [Bing Webmaster Tools](https://ssl.bing.com/webmaster/configure/verify/ownership) support.
+
+---
+
+### Navigation Links
+
+To set what links appear in the top navigation edit `_data/navigation.yml`. Use the following format to set the URL and title for as many links as you'd like. *External links will open in a new window.*
+
+{% highlight yaml %}
+- title: Home
+  url: /
+
+- title: Blog
+  url: /blog/
+
+- title: Projects
+  url: /projects/
+
+- title: About
+  url: /about/
+
+- title: JBlog
+  url: http://alperenbozkurt.net/JBlog
+{% endhighlight %}
+
+---
+
+## Layouts and Content
+
+Explanations of the various `_layouts` included with the theme and when to use them.
+
+### Post and Page
+
+These two layouts are almost similar. Only difference is page layout doesn't show date under title.
+
+### Post Index Page
+
+A [sample index page]({{ site.url }}/blog/) listing all blog posts. The name can be customized to your liking by editing a few references. For example, to change **Blog** to **Posts** update the following:
+
+* In `_data/navigation.yml`: rename the title and URL to the following:
+{% highlight yaml %}
+  - title: Posts
+    url: /posts/
+{% endhighlight %}
+* Rename `blog/index.md` to `posts/index.md` and update the YAML front matter accordingly.
+
+### Thumbnails for OG and Twitter Cards
+
+Site logo is used by [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards).
+
+**Pro-Tip**: You need to [apply for Twitter Cards](https://dev.twitter.com/docs/cards) before they will begin showing up when links to your site are shared.
+{:.notice}
+
+### Kramdown Table of Contents
+
+To include an auto-generated **table of contents** for posts and pages, add the following `_include` before the actual content. [Kramdown will take care of the rest](http://kramdown.rubyforge.org/converter/html.html#toc) and convert all headlines into list of links.
+
+{% highlight html %}
+{% raw %}{% include toc.html %}{% endraw %}
+{% endhighlight %}
+
+---
+
+## Questions?
+
+Found a bug or aren't quite sure how something works? By all means [file a GitHub Issue](https://github.com/alperenbozkurt/JBlog/issues/new). And if you make something cool with this theme feel free to let me know.
+
+---
+
+## License
+
+This theme is free and open source software, distributed under the MIT License. So feel free to use this Jekyll theme on your site without linking back to me or including a disclaimer.</content><author><name></name></author><category term="jekyll" /><category term="JBlog" /><category term="blog" /><category term="about" /><category term="theme" /><summary type="html">Simple Jekyll theme for your blog by Alperen Bozkurt.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/02/1424055625jekyll.png" /></entry><entry><title type="html">Markdown Syntax</title><link href="http://localhost:4000/markdown-syntax/" rel="alternate" type="text/html" title="Markdown Syntax" /><published>2016-03-15T00:00:00-05:00</published><updated>2016-03-15T00:00:00-05:00</updated><id>http://localhost:4000/markdown-syntax</id><content type="html" xml:base="http://localhost:4000/markdown-syntax/">## HTML Elements
+
+Below is just about everything you'll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+### Body text
+
+Lorem ipsum dolor sit amet, test link adipiscing elit. **This is strong**. Nullam dignissim convallis est. Quisque aliquam.
+
+![jekyll Image](http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/02/1424055625jekyll.png)
+{: .image-pull-right}
+
+*This is emphasized*. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H2O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times (That’s a citation). Underline.Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+
+HTML and CSS are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.
+
+### Blockquotes
+
+&gt; Lorem ipsum dolor sit amet, test link adipiscing elit. Nullam dignissim convallis est. Quisque aliquam.
+
+## List Types
+
+### Ordered Lists
+
+1. Item one
+   1. sub item one
+   2. sub item two
+   3. sub item three
+2. Item two
+
+### Unordered Lists
+
+* Item one
+* Item two
+* Item three
+
+## Tables
+
+| Header1 | Header2 | Header3 |
+|:--------|:-------:|--------:|
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|----
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|=====
+| Foot1   | Foot2   | Foot3
+{: rules=&quot;groups&quot;}
+
+## Code Snippets
+
+{% highlight css %}
+#container {
+  float: left;
+  margin: 0 -240px 0 0;
+  width: 100%;
+}
+{% endhighlight %}
+
+## Buttons
+
+Make any link standout more when applying the `.btn` class.
+
+{% highlight html %}
+&lt;a href=&quot;#&quot; class=&quot;btn btn-success&quot;&gt;Success Button&lt;/a&gt;
+{% endhighlight %}
+
+&lt;div markdown=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Primary Button&lt;/a&gt;&lt;/div&gt;
+&lt;div markdown=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-success&quot;&gt;Success Button&lt;/a&gt;&lt;/div&gt;
+&lt;div markdown=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-warning&quot;&gt;Warning Button&lt;/a&gt;&lt;/div&gt;
+&lt;div markdown=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-danger&quot;&gt;Danger Button&lt;/a&gt;&lt;/div&gt;
+&lt;div markdown=&quot;0&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-info&quot;&gt;Info Button&lt;/a&gt;&lt;/div&gt;
+
+## Notices
+
+**Watch out!** You can also add notices by appending `{: .notice}` to a paragraph.
+{: .notice}</content><author><name></name></author><category term="markdown" /><category term="syntax" /><category term="sample" /><category term="test" /><category term="jekyll" /><summary type="html">Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more.</summary></entry><entry><title type="html">A Post with Images</title><link href="http://localhost:4000/sample-post-images/" rel="alternate" type="text/html" title="A Post with Images" /><published>2013-05-22T00:00:00-05:00</published><updated>2013-05-22T00:00:00-05:00</updated><id>http://localhost:4000/sample-post-images</id><content type="html" xml:base="http://localhost:4000/sample-post-images/">Here are some examples of what a post with images might look like. If you want to display two or three images next to each other responsively use `figure` with the appropriate `class`. Each instance of `figure` is auto-numbered and displayed in the caption.
+
+### Figures (for images or video)
+
+#### One Up
+
+&lt;figure&gt;
+	&lt;a href=&quot;http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg&quot;&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg&quot;&gt;&lt;/a&gt;
+	&lt;figcaption&gt;&lt;a href=&quot;http://www.flickr.com/photos/80901381@N04/7758832526/&quot; title=&quot;Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr&quot;&gt;Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr&lt;/a&gt;.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+Vero laborum commodo occupy. Semiotics voluptate mumblecore pug. Cosby sweater ullamco quinoa ennui assumenda, sapiente occupy delectus lo-fi. Ea fashion axe Marfa cillum aliquip. Retro Bushwick keytar cliche. Before they sold out sustainable gastropub Marfa readymade, ethical Williamsburg skateboard brunch qui consectetur gentrify semiotics. Mustache cillum irony, fingerstache magna pour-over keffiyeh tousled selfies.
+
+#### Two Up
+
+Apply the `half` class like so to display two images side by side that share the same caption.
+
+{% highlight html %}
+&lt;figure class=&quot;half&quot;&gt;
+    &lt;a href=&quot;/images/image-filename-1-large.jpg&quot;&gt;&lt;img src=&quot;/images/image-filename-1.jpg&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;/images/image-filename-2-large.jpg&quot;&gt;&lt;img src=&quot;/images/image-filename-2.jpg&quot;&gt;&lt;/a&gt;
+    &lt;figcaption&gt;Caption describing these two images.&lt;/figcaption&gt;
+&lt;/figure&gt;
+{% endhighlight %}
+
+And you'll get something that looks like this:
+
+&lt;figure class=&quot;half&quot;&gt;
+	&lt;a href=&quot;http://placehold.it/1200x600.JPG&quot;&gt;&lt;img src=&quot;http://placehold.it/600x300.jpg&quot;&gt;&lt;/a&gt;
+	&lt;a href=&quot;http://placehold.it/1200x600.jpeg&quot;&gt;&lt;img src=&quot;http://placehold.it/600x300.jpg&quot;&gt;&lt;/a&gt;
+	&lt;figcaption&gt;Two images.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+#### Three Up
+
+Apply the `third` class like so to display three images side by side that share the same caption.
+
+{% highlight html %}
+&lt;figure class=&quot;third&quot;&gt;
+	&lt;img src=&quot;/images/image-filename-1.jpg&quot;&gt;
+	&lt;img src=&quot;/images/image-filename-2.jpg&quot;&gt;
+	&lt;img src=&quot;/images/image-filename-3.jpg&quot;&gt;
+	&lt;figcaption&gt;Caption describing these three images.&lt;/figcaption&gt;
+&lt;/figure&gt;
+{% endhighlight %}
+
+And you'll get something that looks like this:
+
+&lt;figure class=&quot;third&quot;&gt;
+	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot;&gt;
+	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot;&gt;
+	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot;&gt;
+	&lt;figcaption&gt;Three images.&lt;/figcaption&gt;
+&lt;/figure&gt;</content><author><name></name></author><category term="sample post" /><category term="images" /><category term="test" /><summary type="html">Examples and code for displaying images in posts.</summary></entry><entry><title type="html">MIPS Nedir</title><link href="http://localhost:4000/readability-post/" rel="alternate" type="text/html" title="MIPS Nedir" /><published>2012-05-22T00:00:00-05:00</published><updated>2012-05-22T00:00:00-05:00</updated><id>http://localhost:4000/readability-post</id><content type="html" xml:base="http://localhost:4000/readability-post/">**Mips Nedir ?**
+===
+MIPS **İndirgenmiş Komut Kümesi** türü bir mikroişlemci mimarisidir. MIPS Teknolojileri adlı firma tarafından üretilmiştir. Her komut aynı boydadır. Bu da komutların bilgisayar donanımı tarafından kolay çözülmesini sağlar.
+**RISC** yapısından dolayı tasarımı basittir. Çoğu modern mikroişlemci mimarisi (IBM/Motorola PowerPC, DEC, ARM) Mips mimarisinden esinlenilerek yapılmıştır.
+Günümüz itibarıyla **Nintendo 64**, **Sony PlayStation**, **Sony PlayStation 2** ve **Sony PSP** MIPS mimarisi ile çalışan işlemcilere sahiptirler.
+
+Register'lar Neden Var
+---
+İşlemci birim zamanda sadece bir işlem yapabilir. Örneğin 3 sayıyı toplamasını istediğimizde önce ilk ikisini toplayacak, sonra ara sonucu tekrar ram'e yazacak. Sonra bu ara sonuç ile 3. sayıyı tekrar çağırıp onlarıda toplayacak. Sonra tekrar Ram'e kadar gidi yazacak. Fakat ara sonucu işlemcinin içerisinde tutabilseydik işlemleri daha hızlı gerçekleştirebilirdik. Her işlemden sonra verileri ram'e götürüp yazmak zorunda kalmazdık. Böyle diyerek işlemcinin içerisine registerları eklemişler.
+
+Hangi Register Ne işe Yarar
+---
+
+|  Register |  Sayısı |  Açıklama |
+|:---|:---:|---:|
+| $zero     | 0     | İçerisinde 0 sayısı vardır.  |
+|---
+| $at       | 1     | Assembler tarafından kullanılır.  |
+|---
+| $v0-$v1  | 2-3   | Metodların return değişkenleri için. |
+|---
+| $a0-$a3  | 4-7   | Metodlara gidecek parametreler için. |
+|---
+| $t0-$t7  | 8-15  | Geçici değişkenler  |
+|---
+| $s0-$s7  | 16-23 | Kayıt registerları |
+|---
+| $t8-$t9  | 24-25 | Biraaz daha geçici değişken  |
+|---
+| $k0-$k1  | 26-27 | İşletim sistemi tarafından kullanılır. |
+|---
+| $gp      | 28    | Global Pointer  |
+|---
+| $sp      | 29    | Stack Pointer |
+|---
+| $fp      | 30    | Frame Pointer  |
+|===
+| $ra      | 31    | Return Adress |
+
+
+Örnek Bir Assembly Kodu
+---
+C dilinde yazılmış `f = (a+b)+(c+d)` işlemini assembly ile yazalım.
+(Değişkenler sırasıyla s0,s1,s2,s3,s4 registerlarına getirilmiştir.)
+{% highlight ca65 %}
+add $t0, $s1, $s2
+add $t1, $s3, $s4
+add $s0, $t0, $t1
+{% endhighlight %}</content><author><name></name></author><category term="sample post" /><category term="readability" /><category term="test" /><summary type="html">Mips ve assembly kodları giriş.</summary></entry></feed>
