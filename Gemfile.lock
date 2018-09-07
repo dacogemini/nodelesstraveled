@@ -171,6 +171,8 @@ GEM
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     public_suffix (2.0.5)
+    rails_autoscale_agent (0.3.1)
+      activesupport (>= 3.2)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
@@ -199,7 +201,8 @@ DEPENDENCIES
   jekyll-gist
   jekyll-mentions
   jekyll-sitemap
+  rails_autoscale_agent
   rouge
 
 BUNDLED WITH
-   1.14.6
+   1.16.4
